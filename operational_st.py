@@ -64,5 +64,5 @@ ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.in
 ml_result["max_ml"]=ml_result.idxmax(axis=1)
 ml_result.iloc[:,0:-1]=ml_result.iloc[:,0:-1].applymap(lambda n: '{:.0%}'.format(n))
 st.write("""  ## Machine learning results""")
-st.write(ml_result)
+#st.write(ml_result)
 
