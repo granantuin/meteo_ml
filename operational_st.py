@@ -59,10 +59,11 @@ if algo["D"]==2:
   df_x =df_x.iloc[47:72]
  
 #machine learning probabilistic result
-ml_prob= algo["model"].predict_proba(algo["pca"].transform(algo["scaler"].transform(df_x))) 
-ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.index).add_suffix('_ml')
-ml_result["max_ml"]=ml_result.idxmax(axis=1)
-ml_result.iloc[:,0:-1]=ml_result.iloc[:,0:-1].applymap(lambda n: '{:.0%}'.format(n))
-st.write("""  ## Machine learning results""")
+ml_prob= algo["model"].predict_proba(algo["pca"].transform(algo["scaler"].transform(df_x)))
+st.write(""" ## Hello""")
+#ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.index).add_suffix('_ml')
+#ml_result["max_ml"]=ml_result.idxmax(axis=1)
+#ml_result.iloc[:,0:-1]=ml_result.iloc[:,0:-1].applymap(lambda n: '{:.0%}'.format(n))
+#st.write("""  ## Machine learning results""")
 #st.write(ml_result)
 
