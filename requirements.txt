@@ -1,4 +1,4 @@
 streamlit==0.81.0
 pandas==1.0.5
-scikit-learn==0.22.2
+scikit-learn==0.22.2.post1
 numpy==1.18.5
