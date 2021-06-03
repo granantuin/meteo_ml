@@ -9,7 +9,7 @@ import streamlit as st
 
  
 #load algorithm
-st.sidebar.image("Arousa.jpg")
+st.sidebar.image("Arousa.JPG")
 st.sidebar.title('Choose your algorithm')
 algorithm_file=st.sidebar.selectbox('select algorithm',('prec_1hour_before_coron_p4R4KmD0.al','B_spd_coron_p4R4KmD0.al'))
 algo=pickle.load(open(algorithm_file,"rb"))
