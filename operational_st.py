@@ -21,7 +21,7 @@ explanation = st.checkbox('meteorologicalvariablecode explanation')
 if explanation:
     st.table(df_expla)    
          
-algorithms=[filename for filename in os.listdir() if filename.endswith('.al')]
+algorithms=[filename for filename in sorted(os.listdir()) if filename.endswith('.al')]
 st.write("### **Select algorithm**")        
 algorithm_file=st.selectbox("",(algorithms))
 algo=pickle.load(open(algorithm_file,"rb"))
