@@ -103,7 +103,7 @@ ml_result_c=ml_result[ml_result != "0%"].dropna(axis=1, how='all').fillna("0%")
 #get metar 
 
 #today metar
-OACI="LEVX"
+OACI=''.join([c for c in algorithm_file if c.isupper()])
 
 #url string
 s1="https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station="
