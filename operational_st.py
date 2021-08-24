@@ -11,7 +11,7 @@ import os
 #☺st.image("Arousa.JPG")
 
 #algorithm list selection
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Meterological Machine Learning Platform",layout="wide")
 st.write("### **Algorithm  Format** ")
 st.write("*meteorologicalvariablecode-location-forecastday.al*")
 
