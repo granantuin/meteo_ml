@@ -135,6 +135,8 @@ if st.checkbox('Show map and coordinates'):
     st.plotly_chart(dist_map)
     st.dataframe(algo["coor"])
 
+if st.checkbox("Show abstract ?"):
+    st.write(algo["abstract"])    
 
 #select show x var , algorithm, pca and map
 if st.sidebar.checkbox('Show meteorological model variables'):
