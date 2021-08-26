@@ -443,7 +443,7 @@ def save_al():
     if save_a=="y":
         
         abstract=str(input("abtract (sklearn version...)?\n"))
-        if x_and_y_same:
+        if x_and_y_same == "True":
             
             met_ml={"scaler":scaler,"pca":pca,"model":model,"Confusion matrix":global_ml,"Precision":column_ml,
             "Recall":index_ml,"Classification report":clas_ml,"met_var_sc":met_var_sc,"x_and_y_same":True,
