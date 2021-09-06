@@ -30,7 +30,7 @@ algo=pickle.load(open("algo_list/"+algorithm_file,"rb"))
    
 #select quality report
 st.sidebar.write("### **Select quality report**")
-key_selected=st.sidebar.selectbox("",('Confusion matrix', 'Precision', 'Recall', 'Classification report','cros_val'))
+key_selected=st.sidebar.selectbox("",('Classification report','Confusion matrix', 'Precision', 'Recall', 'cros_val'))
 reports={"Confusion matrix":0,"Precision":1,"Recall":2,"Classification report":3,"cros_val":0}
 
 
