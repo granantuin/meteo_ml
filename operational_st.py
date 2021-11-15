@@ -5,7 +5,7 @@ import pickle
 import streamlit as st
 import plotly.express as px
 import os
- 
+from st_aggrid import AgGrid 
 #load algorithm and select quality features
 
 
@@ -123,8 +123,8 @@ else:
     st.dataframe(ml_result_c["max_ml"].to_frame().join(df_metar,how="left"))
     
 st.title(""" Probabilistic Forecast""")   
-st.dataframe(ml_result_c) 
-    
+#st.dataframe(ml_result_c) 
+AgGrid(ml_result_c)    
 st.sidebar.title("""  Machine learning report""")
 st.sidebar.dataframe(algo[key_selected])
 
