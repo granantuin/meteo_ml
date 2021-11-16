@@ -124,7 +124,8 @@ if algo["x_and_y_same"]:
     #st.dataframe(compact_result)
     AgGrid(compact_result.reset_index())
 else:
-    st.dataframe(ml_result_c["max_ml"].to_frame().join(df_metar,how="left"))
+    #st.dataframe(ml_result_c["max_ml"].to_frame().join(df_metar,how="left"))
+    AgGrid(ml_result_c["max_ml"].to_frame().join(df_metar,how="left").reset_index())
     
 st.title(""" Probabilistic Forecast""")   
 st.dataframe(ml_result_c) 
