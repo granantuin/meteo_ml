@@ -3,4 +3,4 @@ pandas==1.1.5
 scikit-learn==0.24.1
 numpy==1.18.5
 plotly==4.14.3
-streamlit-aggrid==0.2.2.post4
+streamlit-aggrid==0.2.1
