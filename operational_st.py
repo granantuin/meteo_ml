@@ -5,6 +5,9 @@ import pickle
 import streamlit as st
 import plotly.express as px
 import os
+from st_aggrid import AgGrid
+
+
 #from st_aggrid import AgGrid 
 #load algorithm and select quality features
 
@@ -118,7 +121,8 @@ df_metar=df_metar_global[["time","metar"]].set_index("time")
 st.title(""" Deterministic  Forecast""")
 if algo["x_and_y_same"]:
     compact_result=pd.concat([ml_result_c["max_ml"],df_metmod_label],axis=1).astype(str).join(df_metar,how="left")
-    st.dataframe(compact_result)
+    #st.dataframe(compact_result)
+    AgGrid(compact_result.reset_index())
 else:
     st.dataframe(ml_result_c["max_ml"].to_frame().join(df_metar,how="left"))
     
