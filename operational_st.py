@@ -128,7 +128,7 @@ else:
     AgGrid(ml_result_c["max_ml"].to_frame().join(df_metar,how="left").reset_index())
     
 st.title(""" Probabilistic Forecast""")   
-st.dataframe(ml_result_c.reset_index()) 
+st.dataframe(ml_result_c) 
 #AgGrid(ml_result_c.reset_index())    
 st.sidebar.title("""  Machine learning report""")
 st.sidebar.dataframe(algo[key_selected])
