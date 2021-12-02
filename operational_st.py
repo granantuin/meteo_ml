@@ -5,6 +5,7 @@ import pickle
 import streamlit as st
 import plotly.express as px
 import os
+from lightgbm.sklearn import LGBMClassifier
 from st_aggrid import AgGrid
 
 
