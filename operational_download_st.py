@@ -12,7 +12,7 @@ import streamlit as st
 import plotly.express as px
 import os
 import base64
-
+from st_aggrid import AgGrid
 
 
 def get_table_download_link(df):
@@ -137,11 +137,14 @@ df_metar=df_metar_global[["time","metar"]].set_index("time")
 st.title(""" Deterministic  Forecast""")
 if algo["x_and_y_same"]:
     compact_result=pd.concat([ml_result_c["max_ml"],df_metmod_label],axis=1).astype(str).join(df_metar,how="left")
-    st.dataframe(compact_result)
+    #st.dataframe(compact_result)
+    AgGrid(compact_result.reset_index())
     st.markdown(get_table_download_link(compact_result), unsafe_allow_html=True)
+    
 else:
     compact_result= ml_result_c["max_ml"].to_frame().join(df_metar,how="left")
-    st.dataframe(compact_result)
+    #st.dataframe(compact_result)
+    AgGrid(ml_result_c["max_ml"].to_frame().join(df_metar,how="left").reset_index())
     st.markdown(get_table_download_link(compact_result), unsafe_allow_html=True)
     
 st.title(""" Probabilistic Forecast""")   
