@@ -33,7 +33,7 @@ st.set_page_config(page_title="Meterological Machine Learning Platform",layout="
 
 # Select algorithm
 st.write("#### **Select algorithm**")  
-algorithms=[filename for filename in sorted(os.listdir("algo_list/")) if filename.endswith('.al')]
+algorithms=[filename for filename in sorted(os.listdir("algorithms_baixas/")) if filename.endswith('.al')]
 
 #algorithms explanation  
 explanation = st.checkbox('meteorologicalvariable explanation')
@@ -42,7 +42,7 @@ if explanation:
                        ["Wind direction", "Wind speed Beaufort scale","flight rules"]})
     st.table(df_expla)    
 algorithm_file=st.selectbox("meteorologicalvariable-[season]-meteorologicalstation-forecastday(version).al",(algorithms))
-algo=pickle.load(open("algo_list/"+algorithm_file,"rb"))
+algo=pickle.load(open("algorithms_baixas/"+algorithm_file,"rb"))
 
 #Show map
 px.set_mapbox_access_token("pk.eyJ1IjoiZ3JhbmFudHVpbiIsImEiOiJja3B4dGU4OTkwMTFmMm9ycnNhMjJvaGJqIn0.VWzx_PkD9A5cSUVsn_ijCA")
