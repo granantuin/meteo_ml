@@ -5,8 +5,7 @@ Python file to get the historic wrf model from Meteogalicia server.
 
 *intput data:*.
 
-lat_station = 42.626  latitude
-
+lat_station = 42.626  latitude.
 lon_station = -8.784  longitude.
 
 n_nearest =  4  nearest points to the station.
