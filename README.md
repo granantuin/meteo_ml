@@ -3,7 +3,7 @@
 #### get_wrf.py
 Python file to get the historic wrf model from Meteogalicia server.
 
-intput data:.
+*intput data:*.
 
 lat_station = 42.626  latitude.
 
@@ -18,6 +18,10 @@ initial_day_YYYYMMDD = "20211201".
 final_day_YYYYMMDD = "20211215".
 
 spatial_resolution = "4Km".
+
+*output data*
+
+[kml file with meteorological model and station points](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
 
 
 
