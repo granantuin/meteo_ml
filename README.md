@@ -1,6 +1,6 @@
 # meteo_ml
 ## **meteorological_models directory**
-#### get_wrf.py
+##### get_wrf.py
 Python file to get the historic wrf model from Meteogalicia server.
 
 *intput data:*.
@@ -21,7 +21,11 @@ spatial_resolution = "4Km".
 
 *output data*
 
-[kml file with meteorological model and station points](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
+[kml file with meteorological model and station coordenates](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
+
+[csv file with met variables in columns](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
+
+[csv file dist_ with distances from meteorological points to the station(https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
 
 
 
