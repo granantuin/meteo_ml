@@ -1,4 +1,4 @@
-# meteo_ml
+
 ## **meteorological_models directory**
 ##### get_wrf.py
 Python file to get the historic wrf model from Meteogalicia server.
@@ -27,6 +27,9 @@ spatial_resolution = "4Km".
 
 [csv file dist_ with distances from meteorological points to the station: distan_lat42.58lon-8.8046p4R4Km.csv](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/distan_lat42.58lon-8.8046p4R4Km.csv)
 
+##### get_wrf_1km.py
+
+get wrf from Meteogalicia 1km resolution
 
 
 files to deploy meteo machine learning to the web
