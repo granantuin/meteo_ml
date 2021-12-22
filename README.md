@@ -29,7 +29,7 @@ spatial_resolution = "4Km".
 
 ##### get_wrf_1km.py
 
-get wrf from Meteogalicia 1km resolution
+Python file to get the historic wrf model from Meteogalicia server 1km resolution
 
 
 files to deploy meteo machine learning to the web
