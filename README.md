@@ -19,7 +19,7 @@ final_day_YYYYMMDD = "20211215".
 
 spatial_resolution = "4Km".
 
-*output data*
+*output data (exemples)*
 
 [kml file with meteorological model and station coordenates](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
 
