@@ -51,7 +51,7 @@ dist_map=px.scatter_mapbox(algo["coor"], hover_data=['distance'],lat='lat', lon=
 st.plotly_chart(dist_map)
 st.markdown(get_table_download_link(algo["coor"]), unsafe_allow_html=True)
 
-
+@st.cache
 #Select model point if x and y are equal
 if algo["x_and_y_same"]:
     points_met_model=[e for e in algo["met_var_sc"].keys()]
