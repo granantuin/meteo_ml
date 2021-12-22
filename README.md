@@ -25,7 +25,7 @@ spatial_resolution = "4Km".
 
 [csv file with met variables in columns:lat42.58lon-8.8046p4R4KmD1.csv](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
 
-[csv file dist_ with distances from meteorological points to the station:lat42.58lon-8.8046p4R4KmD1.csv](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/lat42.58lon-8.8046p4R4KmD1.csv)
+[csv file dist_ with distances from meteorological points to the station: distan_lat42.58lon-8.8046p4R4Km.csv](https://github.com/granantuin/meteo_ml/blob/main/meteorological_models/distan_lat42.58lon-8.8046p4R4Km.csv)
 
 
 
