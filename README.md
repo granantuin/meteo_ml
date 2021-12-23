@@ -41,8 +41,15 @@ Notebook to get meteorological data from METAR reports. [Database IOWA UNIVERSIT
 
 ## algo_list
 
-files containing algorithms. Format meteorologicalvariable-season-station-forecast(d0,d1...).al
+Files containing algorithms. Format meteorologicalvariable-season-station-forecast(d0,d1...).al
 
+##### **algo_builder.ipynb**
+
+Notebook to create .al files. Input data: station files and model files
+
+##### **algo_builder_function.ipynb**
+
+Notebook with help functions 
 
 
 files to deploy meteo machine learning to the web
