@@ -33,5 +33,11 @@ Python file to get the historic wrf model from Meteogalicia server 1km resolutio
 
 ## **met_stations directory**
 
+meteorological stations. Extension .zip and .pt (parquet file)
+
+##### **get_metar**
+
+Notebook 
+
 files to deploy meteo machine learning to the web
 ## [Link to de Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
