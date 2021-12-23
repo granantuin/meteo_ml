@@ -1,6 +1,15 @@
+## **Main menu** 
+
+Streamlit python files to deploy algorithm files with extension .al 
+
+files to deploy meteo machine learning to the web
+
+#### [Link to the Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
 
 ## **meteorological_models directory**
+
 ##### get_wrf.py
+
 Python file to get the historic wrf model from Meteogalicia server.
 
 *intput data:*.
@@ -35,7 +44,7 @@ Python file to get the historic wrf model from Meteogalicia server 1km resolutio
 
 meteorological stations. Extension .zip and .pt (parquet file)
 
-##### **get_metar**
+##### **get_metar.ipynb**
 
 Notebook to get meteorological data from METAR reports. [Database IOWA UNIVERSITY](https://mesonet.agron.iastate.edu/request/download.phtml?network=ES__ASOS)
 
@@ -51,9 +60,4 @@ Notebook to create .al files. Input data: station files and model files
 
 Notebook with help functions required by algo_builder notebook
 
-## **Main menu** 
 
-Streamlit python files to deploy algorithm files with extension .al 
-
-files to deploy meteo machine learning to the web
-#### [Link to the Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
