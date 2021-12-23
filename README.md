@@ -2,7 +2,7 @@
 
 Streamlit python files to deploy algorithm files with extension .al 
 
-#### [Link to the Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
+#### [Link to the Streamlit Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
 
 ## **meteorological_models directory**
 
@@ -52,7 +52,7 @@ Files containing algorithms. Format meteorologicalvariable-season-station-foreca
 
 ##### **algo_builder.ipynb**
 
-Notebook to create .al files. Input data: station files and model files
+Notebook to create .al files. Input data: station files and meteorological model files
 
 ##### **algo_builder_functions.ipynb**
 
