@@ -53,7 +53,11 @@ Files containing algorithms. Format meteorologicalvariable-season-station-foreca
 
 ##### **algo_builder.ipynb**
 
-Notebook to create .al files. Input data: station files and meteorological model files
+Notebook to create .al files. 
+
+*Input data*: station files and meteorological model files
+
+*Output data*: algorithm files (.al)
 
 ##### **algo_builder_functions.ipynb**
 
