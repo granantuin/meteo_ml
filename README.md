@@ -2,7 +2,8 @@
 
 Streamlit python files to deploy algorithm files with extension .al 
 
-#### [Link to the Streamlit Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
+#### [Link to the Streamlit Platform 4 Km resolution](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
+#### [Link to the Streamlit Platform 1 Km Baixas resolution](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st_baixas.py)
 
 ## **meteorological_models directory**
 
