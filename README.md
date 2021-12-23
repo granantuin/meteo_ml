@@ -2,8 +2,6 @@
 
 Streamlit python files to deploy algorithm files with extension .al 
 
-files to deploy meteo machine learning to the web
-
 #### [Link to the Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
 
 ## **meteorological_models directory**
@@ -48,7 +46,7 @@ meteorological stations. Extension .zip and .pt (parquet file)
 
 Notebook to get meteorological data from METAR reports. [Database IOWA UNIVERSITY](https://mesonet.agron.iastate.edu/request/download.phtml?network=ES__ASOS)
 
-## algo_list
+## algo_list directory
 
 Files containing algorithms. Format meteorologicalvariable-season-station-forecast(d0,d1...).al
 
