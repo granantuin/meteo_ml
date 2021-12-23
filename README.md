@@ -55,7 +55,7 @@ Files containing algorithms. Format meteorologicalvariable-season-station-foreca
 
 Notebook to create .al files. 
 
-*Input data*: station files and meteorological model files
+*Input data*: meteorological station files and meteorological model files
 
 *Output data*: algorithm files (.al)
 
