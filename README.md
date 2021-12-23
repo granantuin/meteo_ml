@@ -47,13 +47,13 @@ Files containing algorithms. Format meteorologicalvariable-season-station-foreca
 
 Notebook to create .al files. Input data: station files and model files
 
-##### **algo_builder_function.ipynb**
+##### **algo_builder_functions.ipynb**
 
-Notebook with help functions 
+Notebook with help functions rquired by algo_builder notebook
 
 ## **Main menu** 
 
 Streamlit python files to deploy algorithm files with extension .al 
 
 files to deploy meteo machine learning to the web
-## [Link to de Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
+#### [Link to de Platform](https://share.streamlit.io/granantuin/meteo_ml/main/operational_st.py)
