@@ -51,7 +51,6 @@ def select_algo():
     
     return algo,algorithm_file
     
-@st.cache
 def get_meteogalicia_model(algo):
     """
     get meteogalicia model from algo coordenates
