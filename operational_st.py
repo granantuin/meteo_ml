@@ -150,8 +150,11 @@ def prob_result(algo):
     prob results
     """
     ml_prob= algo["model"].predict_proba(algo["pca"].transform(algo["scaler"].transform(df_x))) 
-    ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.index)
     #ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.index.apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S')))
+    ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_)
+    ml_result["time"]=df_x.index
+    ml_result["time"]= pd.to_datetime(ml_result["time"]).apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
+    ml_result=ml_result.set_index("time")
     ml_result["max_ml"]=ml_result.idxmax(axis=1)
     ml_result.iloc[:,0:-1]=ml_result.iloc[:,0:-1].applymap(lambda n: '{:.0%}'.format(n))
     #delete columns with all 0%
