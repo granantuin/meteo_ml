@@ -150,7 +150,6 @@ def prob_result(algo):
     prob results
     """
     ml_prob= algo["model"].predict_proba(algo["pca"].transform(algo["scaler"].transform(df_x))) 
-    #ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_).set_index(df_x.index.apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S')))
     ml_result=pd.DataFrame(ml_prob,columns=algo["model"].classes_)
     ml_result["time"]=df_x.index
     ml_result["time"]= pd.to_datetime(ml_result["time"]).apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
@@ -215,7 +214,7 @@ def deter_prob_forecast(algo,ml_result_c,df_metmod_label):
     Deterministic and probabilistic results on screen.
 
     """
-    st.title(""" Deterministic  Forecast (Time units UTC)""")
+    st.title(""" Deterministic  Forecast (Time UTC)""")
     if algo["x_and_y_same"]:
         compact_result=pd.concat([ml_result_c["max_ml"],df_metmod_label],axis=1).astype(str).join(df_metar,how="left")
         #st.dataframe(compact_result)
@@ -228,7 +227,7 @@ def deter_prob_forecast(algo,ml_result_c,df_metmod_label):
         AgGrid(ml_result_c["max_ml"].to_frame().join(df_metar,how="left").reset_index())
         st.markdown(get_table_download_link(compact_result), unsafe_allow_html=True)
     
-    st.title(""" Probabilistic Forecast (Time units UTC)""")   
+    st.title(""" Probabilistic Forecast (Time UTC)""")   
     st.dataframe(ml_result_c) 
     st.markdown(get_table_download_link(ml_result_c), unsafe_allow_html=True)
 
