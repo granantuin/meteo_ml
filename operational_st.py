@@ -154,7 +154,6 @@ def prob_result(algo):
     ml_result["timez"]=df_x.index
     ml_result["time"]= pd.to_datetime(ml_result["timez"]).apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
     ml_result=ml_result.set_index("time")
-    ml_result.index = pd.to_datetime(ml_result.index)
     ml_result=ml_result.drop(columns=["timez"])
     ml_result["max_ml"]=ml_result.idxmax(axis=1)
     ml_result.iloc[:,0:-1]=ml_result.iloc[:,0:-1].applymap(lambda n: '{:.0%}'.format(n))
