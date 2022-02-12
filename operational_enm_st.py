@@ -69,13 +69,13 @@ algo_g_d0=pickle.load(open("enm_udra/gust_udr_d0.al","rb"))
 
 #load raw meteorological model and get model variables
 meteo_model=get_meteogalicia_model(algo_g_d0["coor"])[:24]
-"""
+
 #map
 px.set_mapbox_access_token("pk.eyJ1IjoiZ3JhbmFudHVpbiIsImEiOiJja3B4dGU4OTkwMTFmMm9ycnNhMjJvaGJqIn0.VWzx_PkD9A5cSUVsn_ijCA")
 dist_map=px.scatter_mapbox(algo_g_d0["coor"], hover_data=['distance'],lat='lat', lon='lon',color='distance',
                            color_continuous_scale=px.colors.cyclical.IceFire,)
 st.plotly_chart(dist_map)
-"""
+
 #Select meteorological model wind features
 w_g0=(meteo_model.wind_gust0*1.94384).round(1).to_numpy()
 dir0=(meteo_model.dir0).round(0).to_numpy()
