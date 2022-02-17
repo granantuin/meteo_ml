@@ -12,7 +12,6 @@ import pickle
 import streamlit as st
 import plotly.express as px
 from st_aggrid import AgGrid
-from PIL import Image
 
 def get_meteogalicia_model(coorde):
     """
@@ -60,7 +59,7 @@ def get_meteogalicia_model(coorde):
     return dffinal 
 
 st.set_page_config(page_title="ENM Machine Learning Platforma",layout="wide")
-st.write("#### **Mapa situación cabo Udra y puntos modelo**") 
+st.write("#### **Mapa situación estación meteoroloógica cabo Udra y puntos modelo WRF Meteogalicia**") 
 
 #load algorithm file gust
 
@@ -98,34 +97,17 @@ dir_ml=algo_dir_d0["ml_model"].predict(model_x_var_d)
 #compare results
 df_show=pd.DataFrame({"Hora UTC":meteo_model.index,
                       "Machine Learning dirección grados":dir_ml,
-                      "Modelo meteorológico dirección grados":dir0,
+                      "Modelo WRF en punto 0 dirección grados":dir0,
                       "Machine Learning racha máxima nudos":gust_ml,
-                      "Modelo meteorológico racha máxima nudos":w_g0,
+                      "Modelo WRF en punto 0 racha máxima nudos":w_g0,
                       })
                      
-st.title(""" Pronóstico viento cabo Udra""")
+st.title(""" Pronóstico viento estación cabo Udra Modelo WRF de Meteogalicia y Machine Learning""")
 AgGrid(df_show)
+with open("enm_udra/informe_calidad.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
 
-#Sidebar rapports
-image1=Image.open("enm_udra/confusion.jpg")
-df_met_model=pd.read_excel("enm_udra/metmodel_rapport.xls")
-df_ma_co_metmodel=pd.read_excel("enm_udra/ma_con_met_model.xls")
-df_ma_co_metmodel=df_ma_co_metmodel.rename(columns={"Unnamed: 0": "Direcciones grados"})
-df_met_model=df_met_model.rename(columns={"Unnamed: 0": "Direcciones grados"})
-df_R2=pd.read_csv("enm_udra/R2_meteo_model.csv")
-df_R2=df_R2.rename(columns={"Unnamed: 0": "Estación puntos modelo"})
-image2=Image.open("enm_udra/ml-regressor.png")
-image3=Image.open("enm_udra/ml_dir_repport.png")
-
-st.sidebar.title("""Matriz de confusion Modelo Meteorológico (dirección viento)""")
-st.sidebar.dataframe(df_ma_co_metmodel)
-st.sidebar.title("""Matriz de confusion Machine learning (dirección viento)""")
-st.sidebar.image(image1)
-st.sidebar.title("""Informe de calidad Modelo meteorológico (dirección viento)""")
-st.sidebar.dataframe(df_met_model)
-st.sidebar.title("""Informe de calidad Modelo Machine learning (dirección viento)""")
-st.sidebar.image(image3)
-st.sidebar.title(""" R2 entre los puntos del modelo meteorológico y la estación (Racha)""")
-st.sidebar.dataframe(df_R2)
-st.sidebar.title(""" R2 entre los puntos del modelo de Machine learning y la estación (Racha)""")
-st.sidebar.image(image2)
+st.download_button(label="Descargar informe de calidad",
+                    data=PDFbyte,
+                    file_name="informe_calidad.pdf",
+                    mime='application/octet-stream')
