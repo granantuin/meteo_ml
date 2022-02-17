@@ -104,7 +104,7 @@ df_show=pd.DataFrame({"Hora UTC":meteo_model.index,
                      
 st.title(""" Pronóstico viento estación cabo Udra Modelo WRF de Meteogalicia y Machine Learning""")
 AgGrid(df_show)
-with open("enm_udra/informe_calidad.pdf", "rb") as pdf_file:
+with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
 st.download_button(label="Descargar informe de calidad",
