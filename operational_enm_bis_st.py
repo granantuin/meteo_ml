@@ -17,7 +17,7 @@ import pickle
 import streamlit as st
 import plotly.express as px
 from st_aggrid import AgGrid
-st.set_page_config(page_title="ENM Plataforma",layout="wide")
+
 def get_meteogalicia_model(coorde):
     """
     get meteogalicia model from algo coordenates
