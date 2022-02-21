@@ -1,15 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 21 10:40:34 2022
-
-@author: usuario
-"""
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Feb  5 10:54:11 2022
-@author: usuario
-"""
-
 import numpy as np
 import pandas as pd
 from datetime import timedelta
@@ -17,7 +5,7 @@ import pickle
 import streamlit as st
 import plotly.express as px
 from st_aggrid import AgGrid
-
+st.set_page_config(page_title="ENM Platforma",layout="wide")
 def get_meteogalicia_model(coorde):
     """
     get meteogalicia model from algo coordenates
