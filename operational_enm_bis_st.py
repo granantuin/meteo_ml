@@ -114,4 +114,4 @@ prec_ml=algo_prec_d1["ml_model"].predict_proba(model_x_var_p)
 df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])["precipitación"].map(lambda n: '{:.0%}'.format(n))
                      
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
-st.dataframe(df_show_pre.set_index(meteo_model[:24].index[23:47])
+st.dataframe(df_show_pre.set_index(meteo_model[:24].index[23:47]))
