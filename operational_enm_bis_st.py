@@ -61,7 +61,7 @@ def get_meteogalicia_model(coorde):
          
     return dffinal 
 
-st.set_page_config(page_title="ENM Machine Learning Platforma",layout="wide")
+st.set_page_config(page_title="ENM Platforma",layout="wide")
 st.write("#### **Mapa situación estación meteorológica cabo Udra y puntos modelo WRF Meteogalicia**") 
 
 #load algorithm file gust
