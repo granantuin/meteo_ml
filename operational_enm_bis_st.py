@@ -111,8 +111,7 @@ model_x_var_p=meteo_model[23:47][algo_prec_d1["x_var"]]
 
 #forecast machine learning wind precipitation
 prec_ml=algo_prec_d1["ml_model"].predict_proba(model_x_var_p)
-df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])["precipitación"].map(lambda n: '{:.0%}'.format(n)).set_index(meteo_model[23:47].index)
-
+df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])["precipitación"].map(lambda n: '{:.0%}'.format(n))
 
                      
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
