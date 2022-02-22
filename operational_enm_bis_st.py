@@ -107,12 +107,13 @@ st.download_button(label="Descargar informe de calidad",
 algo_prec_d1=pickle.load(open("algo_list/prec_mar_d1.al","rb"))
 
 #select x _var
-model_x_var_p=meteo_model[23:47][algo_prec_d1["x_var"]]
+model_x_var_p=meteo_model[24:48][algo_prec_d1["x_var"]]
 
 #forecast machine learning wind precipitation
 prec_ml=algo_prec_d1["ml_model"].predict_proba(model_x_var_p)
 df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])
-df_show_pre["Hora UTC"]=meteo_model.index[23:47]
+df_show_pre["Hora UTC"]=meteo_model.index[24:48]
+df_show_pre.drop(columns=["no p"])
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
 AgGrid(df_show_pre)
-#st.dataframe(meteo_model)
+
