@@ -73,6 +73,7 @@ algo_prec_d1=pickle.load(open("algo_list/prec_mar_d1.al","rb"))
 meteo_model=get_meteogalicia_model(algo_prec_d1["coor"])
 
 #map
+st.write("#### **Mapa situación ENM y puntos modelo WRF Meteogalicia**")
 px.set_mapbox_access_token("pk.eyJ1IjoiZ3JhbmFudHVpbiIsImEiOiJja3B4dGU4OTkwMTFmMm9ycnNhMjJvaGJqIn0.VWzx_PkD9A5cSUVsn_ijCA")
 dist_map=px.scatter_mapbox(algo_prec_d1["coor"], hover_data=['distance'],lat='lat', lon='lon',color='distance',
                            color_continuous_scale=px.colors.cyclical.IceFire,)
