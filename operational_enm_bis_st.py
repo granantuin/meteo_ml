@@ -113,7 +113,8 @@ model_x_var_p=meteo_model[24:48][algo_prec_d1["x_var"]]
 prec_ml=algo_prec_d1["ml_model"].predict_proba(model_x_var_p)
 df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])
 df_show_pre["Hora UTC"]=meteo_model.index[24:48]
-df_show_pre.drop(columns=["no p"])
+df_show_pre=df_show_pre.drop(columns=["no p"])
+df_show_pre['precipitación'] = df_show_pre['precipitación'].map("{:.0%}".format)
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
 AgGrid(df_show_pre)
 
