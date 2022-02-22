@@ -115,3 +115,4 @@ df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])["precipitaci
                      
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
 st.dataframe(df_show_pre)
+st.dataframe(meteo_model)
