@@ -55,6 +55,10 @@ df_show=pd.DataFrame({"Hora UTC":meteo_model[:24].index,
                      
 st.title(""" Pronóstico viento estación cabo Udra Modelo WRF de Meteogalicia y Machine Learning""")
 AgGrid(df_show)
+
+st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada=22/02/2022)")
+
+
 with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
