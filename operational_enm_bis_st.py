@@ -1,11 +1,13 @@
 import numpy as np
 import pandas as pd
 from datetime import timedelta
+from meteogaliciamodel import get_meteogalicia_model
 import pickle
 import streamlit as st
 import plotly.express as px
 from st_aggrid import AgGrid
-st.set_page_config(page_title="ENM Platforma",layout="wide")
+
+"""
 def get_meteogalicia_model(coorde):
     """
     get meteogalicia model from algo coordenates
@@ -48,7 +50,10 @@ def get_meteogalicia_model(coorde):
         
          
     return dffinal 
+"""
+st.set_page_config(page_title="ENM Platforma",layout="wide")
 
+    
 
 st.write("#### **Mapa situación estación meteorológica cabo Udra y puntos modelo WRF Meteogalicia**") 
 
