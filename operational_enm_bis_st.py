@@ -70,7 +70,7 @@ st.download_button(label="Descargar informe de calidad",
 #Precipitation
 
 
-#load algorithm file precipitation marin
+#load algorithm file precipitation marin d1
 algo_prec_d1=pickle.load(open("algo_list/prec_mar_d1.al","rb"))
 
 #load raw meteorological model and get model variables
@@ -86,7 +86,7 @@ st.plotly_chart(dist_map)
 #select x _var
 model_x_var_p=meteo_model[24:48][algo_prec_d1["x_var"]]
 
-#forecast machine learning wind precipitation
+#forecast machine learning precipitation
 prec_ml=algo_prec_d1["ml_model"].predict_proba(model_x_var_p)
 df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])
 df_show_pre["Hora UTC"]=meteo_model.index[24:48]
@@ -94,4 +94,25 @@ df_show_pre=df_show_pre.drop(columns=["no p"])
 df_show_pre['precipitación'] = df_show_pre['precipitación'].map("{:.0%}".format)
 st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
 AgGrid(df_show_pre)
+
+#load algorithm file precipitation marin d0
+algo_prec_d0=pickle.load(open("algo_list/prec_mar_d0.al","rb"))
+
+#select x _var
+model_x_var_p=meteo_model[:24][algo_prec_d1["x_var"]]
+
+#forecast machine learning precipitation
+prec_ml=algo_prec_d0["ml_model"].predict_proba(model_x_var_p)
+df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])
+df_show_pre["Hora UTC"]=meteo_model.index[:24]
+df_show_pre=df_show_pre.drop(columns=["no p"])
+df_show_pre['precipitación'] = df_show_pre['precipitación'].map("{:.0%}".format)
+st.title(""" Probabilidad precipitación ENM Hoy con Machine Learning""")
+AgGrid(df_show_pre)
+
+
+
+
+
+
 
