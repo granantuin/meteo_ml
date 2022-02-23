@@ -107,7 +107,7 @@ st.title(""" Probabilidad precipitación ENM hoy con Machine Learning""")
 AgGrid(df_show_pre)
 
 #download quality report
-with open("enm_udra/Informe_prec.pdf", "rb") as pdf_file:
+with open("enm_udra/informe_prec.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 st.download_button(label="Descargar informe de calidad",
                     data=PDFbyte,
