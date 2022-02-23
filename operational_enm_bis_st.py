@@ -13,9 +13,7 @@ st.set_page_config(page_title="ENM Platforma",layout="wide")
 st.write("#### **Mapa situación estación meteorológica cabo Udra y puntos modelo WRF Meteogalicia**") 
 
 #load algorithm file gust
-
 algo_g_d0=pickle.load(open("enm_udra/gust_udr_d0.al","rb"))
-
 
 #load raw meteorological model and get model variables
 meteo_model=get_meteogalicia_model(algo_g_d0["coor"])
@@ -56,20 +54,18 @@ df_show=pd.DataFrame({"Hora UTC":meteo_model[:24].index,
 st.title(""" Pronóstico viento estación cabo Udra Modelo WRF de Meteogalicia y Machine Learning""")
 AgGrid(df_show)
 
+# link to actual Udra station data
 st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada=22/02/2022)")
 
-
+#download quality report
 with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
-
 st.download_button(label="Descargar informe de calidad",
                     data=PDFbyte,
                     file_name="informe_calidad.pdf",
                     mime='application/octet-stream')
 
 #Precipitation
-
-
 #load algorithm file precipitation marin d1
 algo_prec_d1=pickle.load(open("algo_list/prec_mar_d1.al","rb"))
 
@@ -107,10 +103,16 @@ df_show_pre=pd.DataFrame(prec_ml,columns=["no p","precipitación"])
 df_show_pre["Hora UTC"]=meteo_model.index[:24]
 df_show_pre=df_show_pre.drop(columns=["no p"])
 df_show_pre['precipitación'] = df_show_pre['precipitación'].map("{:.0%}".format)
-st.title(""" Probabilidad precipitación ENM Hoy con Machine Learning""")
+st.title(""" Probabilidad precipitación ENM hoy con Machine Learning""")
 AgGrid(df_show_pre)
 
-
+#download quality report
+with open("enm_udra/Informe_prec.pdf", "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
+st.download_button(label="Descargar informe de calidad",
+                    data=PDFbyte,
+                    file_name="informe_calidad.pdf",
+                    mime='application/octet-stream')
 
 
 
