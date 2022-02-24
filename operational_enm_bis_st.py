@@ -96,7 +96,7 @@ AgGrid(df_show_pre)
 algo_prec_d0=pickle.load(open("algo_list/prec_mar_d0.al","rb"))
 
 #select x _var
-model_x_var_p=meteo_model[:24][algo_prec_d1["x_var"]]
+model_x_var_p=meteo_model[:24][algo_prec_d0["x_var"]]
 
 #forecast machine learning precipitation
 prec_ml=algo_prec_d0["ml_model"].predict_proba(model_x_var_p)
