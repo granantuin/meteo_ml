@@ -55,7 +55,8 @@ st.title(""" Pronóstico viento estación cabo Udra Modelo WRF de Meteogalicia y
 AgGrid(df_show)
 
 # link to actual Udra station data
-st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada=22/02/2022)")
+today_s=pd.to_datetime("today").strftime("%d/%m/%Y)")
+st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada="+today_s)
 
 #download quality report
 with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
