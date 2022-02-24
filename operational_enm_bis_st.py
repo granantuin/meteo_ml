@@ -107,6 +107,8 @@ df_show_pre['precipitación'] = df_show_pre['precipitación'].map("{:.0%}".forma
 st.title(""" Probabilidad precipitación ENM hoy con Machine Learning""")
 AgGrid(df_show_pre)
 
+st.write("Estación Marin [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=14005&dataSeleccionada="+today_s)
+
 #download quality report
 with open("enm_udra/informe_prec.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
