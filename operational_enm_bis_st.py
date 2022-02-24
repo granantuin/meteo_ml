@@ -68,7 +68,7 @@ st.download_button(label="Descargar informe de calidad",
 
 #Precipitation
 #load algorithm file precipitation marin d1
-algo_prec_d1=pickle.load(open("algo_list/prec_mar_d1.al","rb"))
+algo_prec_d1=pickle.load(open("enm_udra/prec_mar_d1.al","rb"))
 
 #load raw meteorological model and get model variables
 meteo_model=get_meteogalicia_model(algo_prec_d1["coor"])
@@ -93,7 +93,7 @@ st.title(""" Probabilidad precipitación ENM mañana con Machine Learning""")
 AgGrid(df_show_pre)
 
 #load algorithm file precipitation marin d0
-algo_prec_d0=pickle.load(open("algo_list/prec_mar_d0.al","rb"))
+algo_prec_d0=pickle.load(open("enm_udra/prec_mar_d0.al","rb"))
 
 #select x _var
 model_x_var_p=meteo_model[:24][algo_prec_d0["x_var"]]
