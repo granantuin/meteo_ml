@@ -12,8 +12,7 @@ st.set_page_config(page_title="ENM Platforma tres",layout="wide")
 st.write("#### **Mapa situación estación meteorológica cabo Udra y puntos modelo WRF Meteogalicia**") 
 
 #load algorithm file gust
-#algo_g_d0=pickle.load(open("enm_udra/gust_udr_d0.al","rb"))
-algo_g_d0=pickle.load(open("C:\\Users\\usuario\\Desktop\\colab\\algorithms\\gust_udr_d0.al","rb"))
+algo_g_d0=pickle.load(open("enm_udra/gust_udr_d0.al","rb"))
 
 #load raw meteorological model and get model variables
 meteo_model=get_meteogalicia_model(algo_g_d0["coor"])
@@ -35,9 +34,7 @@ model_x_var_g=meteo_model[:24][algo_g_d0["x_var"]]
 gust_ml=(algo_g_d0["ml_model"].predict(model_x_var_g)*1.94384).round(1)
 
 #load algorithm file dir
-#algo_dir_d0=pickle.load(open("enm_udra/dir_udr_d0.al","rb"))
-algo_dir_d0=pickle.load(open("C:\\Users\\usuario\\Desktop\\colab\\algorithms\\dir_udr_d0.al","rb"))
-
+algo_dir_d0=pickle.load(open("enm_udra/dir_udr_d0.al","rb"))
 
 #select x _var
 model_x_var_d=meteo_model[:24][algo_dir_d0["x_var"]]
@@ -60,7 +57,6 @@ AgGrid(df_show)
 today_s=pd.to_datetime("today").strftime("%d/%m/%Y)")
 st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada="+today_s)
 
-"""
 #download quality report
 with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
@@ -69,14 +65,10 @@ st.download_button(label="Descargar informe de calidad viento",
                     file_name="informe_calidad.pdf",
                     mime='application/octet-stream')
 
-"""
-
 #Precipitation
-#load algorithm file precipitation marin d1
-#algo_prec_d0=pickle.load(open("enm_udra/prec_mar_d0.al","rb"))
-#algo_prec_d1=pickle.load(open("enm_udra/prec_mar_d1.al","rb"))
-algo_prec_d0=pickle.load(open("C:\\Users\\usuario\\Desktop\\colab\\algorithms\\prec_mar_d0.al","rb"))
-algo_prec_d1=pickle.load(open("C:\\Users\\usuario\\Desktop\\colab\\algorithms\\prec_mar_d1.al","rb"))
+#load algorithm file precipitation marin d0 d1
+algo_prec_d0=pickle.load(open("enm_udra/prec_mar_d0.al","rb"))
+algo_prec_d1=pickle.load(open("enm_udra/prec_mar_d1.al","rb"))
 
 #load raw meteorological model and get model variables
 meteo_model=get_meteogalicia_model(algo_prec_d1["coor"])
@@ -109,7 +101,6 @@ AgGrid(df_show_pre)
 
 st.write("Estación Marin [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=14005&dataSeleccionada="+today_s)
 
-"""
 #download quality report
 with open("enm_udra/informe_prec.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
@@ -117,7 +108,7 @@ st.download_button(label="Descargar informe de calidad precipitación",
                     data=PDFbyte,
                     file_name="informe_calidad.pdf",
                     mime='application/octet-stream')
-"""
+
 
 
 
