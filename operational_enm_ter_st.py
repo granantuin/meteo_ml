@@ -106,7 +106,7 @@ with open("enm_udra/informe_prec.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 st.download_button(label="Descargar informe de calidad precipitación",
                     data=PDFbyte,
-                    file_name="informe_calidad.pdf",
+                    file_name="informe_prec.pdf",
                     mime='application/octet-stream')
 
 
