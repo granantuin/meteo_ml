@@ -58,11 +58,11 @@ today_s=pd.to_datetime("today").strftime("%d/%m/%Y)")
 st.write("Estación Udra [link](https://www.meteogalicia.gal/observacion/meteovisor/indexChartDezHoxe.action?idEstacion=10905&dataSeleccionada="+today_s)
 
 #download quality report
-with open("enm_udra/Informe_calidad.pdf", "rb") as pdf_file:
+with open("enm_udra/Informe_wind.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 st.download_button(label="Descargar informe de calidad viento",
                     data=PDFbyte,
-                    file_name="informe_calidad.pdf",
+                    file_name="informe_wind.pdf",
                     mime='application/octet-stream')
 
 #Precipitation
